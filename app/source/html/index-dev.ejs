@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="static/css/reset.css"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--<script src="<%= htmlWebpackPlugin.options.vendor %>"></script>-->
+    <script src="./vendor.dll.7b4918eae9e5a132f4b6.js"></script>
+    <script>
+        /*设置REM方案*/
+        var iScale,lenWindow,iWidth;
+        function init_rem(){
+            iScale = 1;
+            iScale = iScale/window.devicePixelRatio;
+            lenWindow = document.documentElement.clientWidth;
+            iWidth = lenWindow/12;
+            document.getElementsByTagName('html')[0].style.fontSize=iWidth+'px';
+        }
+        init_rem();
+        window.addEventListener("resize", function () {
+            init_rem();
+        });
+    </script>
+</head>
+<body onresize="window.event.returnValue=false" ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+    <div id="container"></div>
+</body>
+</html>
